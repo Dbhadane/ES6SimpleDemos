@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <script>
+        new Promise(function (resolve, reject) {
+
+            setTimeout(() => reject(1), 100);
+
+        }).then(function (result) {
+
+            alert(result);
+            console.log("In first 1");
+
+            return new Promise((resolve, reject) => {
+                setTimeout(() => resolve(result * 2), 100);
+            });
+
+        }).then(function (result) {
+
+            alert(result); // 2
+            console.log("In first 2");
+            return new Promise((resolve, reject) => {
+                setTimeout(() => resolve(result - 2), 100);
+            });
+
+        }).then(function (result) {
+
+            alert(result);
+            console.log("In first 3");
+
+        }, function (err) {
+            alert("Something Wrong");
+        }
+        );
+    </script>
+</head>
+
+</html>
