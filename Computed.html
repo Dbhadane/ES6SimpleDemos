@@ -1,0 +1,22 @@
+<html>
+
+<head>
+    <script>
+        let name = 'fullName';
+
+        class Person {
+            constructor(firstName, lastName) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+            }
+            get [name]() {
+                return `${this.firstName} ${this.lastName}`;
+            }
+        }
+
+        let person = new Person('Dnyaneshwar', 'Bhadane');
+        console.log(person.fullName);
+    </script>
+</head>
+
+</html>
